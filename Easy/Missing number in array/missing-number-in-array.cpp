@@ -14,7 +14,14 @@ class Solution{
   public:
     int missingNumber(vector<int>& array, int n) {
         int total = (n * (n + 1)) / 2;
-        int sum = accumulate(array.begin(), array.end(), 0);
+        // cout<<total<<endl;
+        
+        int sum = 0;
+        for(int i=0;i<array.size();i++){
+            // cout<<array[i]<<endl;
+            sum = sum+array[i];
+        }
+        // cout<<sum<<endl;
         int miss = total - sum;
         return miss;
     }
